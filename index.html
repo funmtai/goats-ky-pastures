@@ -83,19 +83,8 @@
       display: flex;
       gap: .8rem;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       flex-wrap: nowrap;
-    }
-    .site-title {
-      flex: 1 1 auto;
-      min-width: 0;
-      max-width: 650px;
-      color: var(--green);
-      font-family: "Lato", sans-serif;
-      font-size: .84rem;
-      font-weight: 900;
-      line-height: 1.25;
-      text-align: left;
     }
     .nav-actions {
       display: flex;
@@ -247,8 +236,7 @@
       .fact { border-bottom: 1px solid var(--line); }
     }
     @media (max-width: 600px) {
-      .nav-inner { gap: .45rem; justify-content: space-between; }
-      .site-title { max-width: 44%; font-size: .64rem; line-height: 1.15; }
+      .nav-inner { gap: .45rem; justify-content: flex-end; }
       .nav-actions { gap: 0; }
       .nav-btn { padding: .45rem .35rem; font-size: .78rem; }
       .resource-grid, .photo-credit-grid { grid-template-columns: 1fr; }
@@ -261,16 +249,11 @@
       h1 { font-size: clamp(2.4rem, 13vw, 4rem); }
     }
 
-    body *:not(h1):not(h2):not(h3):not(.site-title) {
+    body *:not(h1):not(h2):not(h3) {
       font-family: "Times New Roman", Times, serif;
       font-size: 12pt;
     }
-    body .site-title {
-      font-family: "Lato", sans-serif;
-      font-size: .84rem;
-    }
     @media (max-width: 600px) {
-      body .site-title { font-size: .64rem; }
       body .nav-actions .nav-btn { font-size: .78rem; }
     }
     body .number-list li::before,
@@ -285,7 +268,6 @@
   <a class="skip" href="#content">Skip to content</a>
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <span class="site-title">Using Goats to Control Invasive Woody Plants in Kentucky Pastures</span>
       <div class="nav-actions">
         <button class="nav-btn active" data-page="home" type="button">Home</button>
         <div class="sections-wrap">
@@ -323,6 +305,9 @@
     </section>
 
     <section class="page" id="invaders" aria-labelledby="invaders-title">
+      <div class="home-banner" role="img" aria-label="A mixed herd of goats eating leafy brush in a pasture">
+        <h1>Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+      </div>
       <div class="wrap">
         <p class="kicker">Section 1</p>
         <h2 id="invaders-title">Know the three main invaders</h2>
@@ -383,6 +368,9 @@
     </section>
 
     <section class="page" id="why-goats" aria-labelledby="why-title">
+      <div class="home-banner" role="img" aria-label="A mixed herd of goats eating leafy brush in a pasture">
+        <h1>Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+      </div>
       <div class="wrap">
         <p class="kicker">Section 2</p>
         <h2 id="why-title">Why goats can do the job</h2>
@@ -423,6 +411,9 @@
     </section>
 
     <section class="page" id="field-plan" aria-labelledby="plan-title">
+      <div class="home-banner" role="img" aria-label="A mixed herd of goats eating leafy brush in a pasture">
+        <h1>Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+      </div>
       <div class="wrap">
         <p class="kicker">Section 3</p>
         <h2 id="plan-title">Build a workable field plan</h2>
@@ -442,6 +433,9 @@
     </section>
 
     <section class="page" id="fencing-care" aria-labelledby="care-title">
+      <div class="home-banner" role="img" aria-label="A mixed herd of goats eating leafy brush in a pasture">
+        <h1>Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+      </div>
       <div class="wrap">
         <p class="kicker">Section 4</p>
         <h2 id="care-title">Fencing and goat care</h2>
@@ -466,6 +460,9 @@
     </section>
 
     <section class="page" id="resources" aria-labelledby="resources-title">
+      <div class="home-banner" role="img" aria-label="A mixed herd of goats eating leafy brush in a pasture">
+        <h1>Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+      </div>
       <div class="wrap">
         <p class="kicker">Section 5</p>
         <h2 id="resources-title">Kentucky resources</h2>
@@ -496,6 +493,9 @@
     </section>
 
     <section class="page" id="credits" aria-labelledby="credits-title">
+      <div class="home-banner" role="img" aria-label="A mixed herd of goats eating leafy brush in a pasture">
+        <h1>Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+      </div>
       <div class="wrap">
         <p class="kicker">Credits &amp; citations</p>
         <h2 id="credits-title">Sources behind this project</h2>
