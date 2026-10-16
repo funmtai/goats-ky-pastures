@@ -196,7 +196,7 @@
     .plain-list li { padding: .9rem 0 .9rem 2.1rem; position: relative; }
     .plain-list li::before { content: ""; position: absolute; width: .72rem; height: .72rem; border-radius: 50%; left: .35rem; top: 1.42rem; background: var(--moss); }
     .number-list { counter-reset: step; list-style: none; padding: 0; margin: 0; }
-    .number-list li { counter-increment: step; display: grid; grid-template-columns: 3.2rem 1fr; gap: .8rem; padding: 1.1rem 0; }
+    .number-list li { counter-increment: step; display: grid; grid-template-columns: 3.2rem 1fr; gap: .8rem; padding: 1.1rem 0; align-items: baseline; }
     .number-list li::before { content: counter(step); font-family: "Times New Roman", Times, serif; font-size: 2.25rem; font-weight: 700; line-height: 1; color: var(--green-2); }
     #field-plan .number-list li::before, #fencing-care .number-list li::before { color: var(--ink); }
     .number-list strong { display: block; margin-bottom: .15rem; }
