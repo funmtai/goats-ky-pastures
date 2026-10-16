@@ -81,10 +81,27 @@
       min-height: 64px;
       padding: .55rem clamp(1rem, 3vw, 2rem);
       display: flex;
-      gap: .45rem;
+      gap: .8rem;
       align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+    .site-title {
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 650px;
+      color: var(--green);
+      font-family: "Lato", sans-serif;
+      font-size: .84rem;
+      font-weight: 900;
+      line-height: 1.25;
+      text-align: left;
+    }
+    .nav-actions {
+      display: flex;
+      flex: 0 0 auto;
+      gap: .2rem;
+      align-items: center;
     }
     .nav-btn {
       appearance: none;
@@ -230,8 +247,10 @@
       .fact { border-bottom: 1px solid var(--line); }
     }
     @media (max-width: 600px) {
-      .nav-inner { justify-content: center; }
-      .nav-btn { padding: .5rem .55rem; font-size: .92rem; }
+      .nav-inner { gap: .45rem; justify-content: space-between; }
+      .site-title { max-width: 44%; font-size: .64rem; line-height: 1.15; }
+      .nav-actions { gap: 0; }
+      .nav-btn { padding: .45rem .35rem; font-size: .78rem; }
       .resource-grid, .photo-credit-grid { grid-template-columns: 1fr; }
       .table-wrap { border-top: 0; }
       table, thead, tbody, tr, th, td { display: block; }
@@ -242,9 +261,17 @@
       h1 { font-size: clamp(2.4rem, 13vw, 4rem); }
     }
 
-    body *:not(h1):not(h2):not(h3) {
+    body *:not(h1):not(h2):not(h3):not(.site-title) {
       font-family: "Times New Roman", Times, serif;
       font-size: 12pt;
+    }
+    body .site-title {
+      font-family: "Lato", sans-serif;
+      font-size: .84rem;
+    }
+    @media (max-width: 600px) {
+      body .site-title { font-size: .64rem; }
+      body .nav-actions .nav-btn { font-size: .78rem; }
     }
     body .number-list li::before,
     body td::before {
@@ -258,18 +285,21 @@
   <a class="skip" href="#content">Skip to content</a>
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <button class="nav-btn active" data-page="home" type="button">Home</button>
-      <div class="sections-wrap">
-        <button class="nav-btn" id="sectionsButton" type="button" aria-expanded="false" aria-controls="sectionsMenu">Sections ▾</button>
-        <div class="sections-menu" id="sectionsMenu" hidden>
-          <button type="button" data-page="invaders">Know the Invaders</button>
-          <button type="button" data-page="why-goats">Why Goats Work</button>
-          <button type="button" data-page="field-plan">Build a Field Plan</button>
-          <button type="button" data-page="fencing-care">Fencing &amp; Goat Care</button>
-          <button type="button" data-page="resources">Kentucky Resources</button>
+      <span class="site-title">Using Goats to Control Invasive Woody Plants in Kentucky Pastures</span>
+      <div class="nav-actions">
+        <button class="nav-btn active" data-page="home" type="button">Home</button>
+        <div class="sections-wrap">
+          <button class="nav-btn" id="sectionsButton" type="button" aria-expanded="false" aria-controls="sectionsMenu">Sections ▾</button>
+          <div class="sections-menu" id="sectionsMenu" hidden>
+            <button type="button" data-page="invaders">Know the Invaders</button>
+            <button type="button" data-page="why-goats">Why Goats Work</button>
+            <button type="button" data-page="field-plan">Build a Field Plan</button>
+            <button type="button" data-page="fencing-care">Fencing &amp; Goat Care</button>
+            <button type="button" data-page="resources">Kentucky Resources</button>
+          </div>
         </div>
+        <button class="nav-btn" data-page="credits" type="button">Credits</button>
       </div>
-      <button class="nav-btn" data-page="credits" type="button">Credits</button>
     </div>
   </nav>
 
@@ -527,7 +557,7 @@
     (function () {
       var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
       var pageButtons = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
-      var navButtons = Array.prototype.slice.call(document.querySelectorAll('.nav-inner > .nav-btn'));
+      var navButtons = Array.prototype.slice.call(document.querySelectorAll('.nav-actions > .nav-btn'));
       var sectionButton = document.getElementById('sectionsButton');
       var sectionMenu = document.getElementById('sectionsMenu');
       var sectionIds = ['invaders', 'why-goats', 'field-plan', 'fencing-care', 'resources'];
