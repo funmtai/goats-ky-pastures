@@ -145,19 +145,28 @@
       max-width: 1480px;
       margin: 0 auto;
     }
-    .hero-copy { padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem); display: flex; flex-direction: column; justify-content: center; }
-    .hero-copy .lead { max-width: 590px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+    .hero-copy {
+      padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #1e4d31;
+      color: #f7faf7;
+    }
+    .hero-copy h1 { color: #ffffff; }
+    .hero-copy .lead { max-width: 590px; color: #edf3ee; font-size: clamp(1.05rem, 2vw, 1.3rem); }
+    .hero-copy .kicker { color: #e3bd62; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.3rem; }
-    .action {
-      border: 1px solid var(--green);
-      background: var(--green);
-      color: var(--paper);
+    .hero-copy .action {
+      border: 1px solid #ffffff;
+      background: #ffffff;
+      color: #1e4d31;
       padding: .78rem 1rem;
       text-decoration: none;
       font-weight: 800;
       cursor: pointer;
     }
-    .action.secondary { background: transparent; color: var(--green-2); }
+    .hero-copy .action.secondary { background: #e9f0eb; color: #1e4d31; border-color: #e9f0eb; }
     .hero-visual { position: relative; min-height: 470px; background: var(--surface-2); overflow: hidden; }
     .hero-visual img { height: 100%; object-fit: cover; }
     .hero-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.8rem 1.3rem .9rem; color: #fff; font-size: .78rem; background: linear-gradient(transparent, rgba(0,0,0,.78)); }
@@ -268,8 +277,10 @@
   <main id="content" tabindex="-1">
     <section class="page active" id="home" aria-labelledby="home-title">
       <div class="wrap home-stack">
-        <h1 id="home-title">Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
-        <p>Multiflora rose, autumn olive, and bush honeysuckle take up grazing space and keep returning after a single cutting. Targeted goat browsing gives Kentucky producers a practical way to weaken that brush over time.</p>
+        <div class="hero-copy">
+          <h1 id="home-title">Using Goats to Control Invasive Woody Plants in Kentucky Pastures</h1>
+          <p class="lead">Multiflora rose, autumn olive, and bush honeysuckle take up grazing space and keep returning after a single cutting. Targeted goat browsing gives Kentucky producers a practical way to weaken that brush over time.</p>
+        </div>
 
         <figure class="home-image">
           <img src="assets/goats-browsing.jpg" alt="A mixed herd of goats eating leafy brush in a pasture" />
